@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @promotion.quantity %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @promotion.discount %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @promotion.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @promotion.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_promotion_path(@promotion) %> |
+<%= link_to 'Back', promotions_path %>
