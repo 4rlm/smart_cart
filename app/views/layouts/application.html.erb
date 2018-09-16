@@ -10,6 +10,24 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <div class="wrapper">
+    <%= render 'shared/nav' %>
+
+      <!-- Page Content Holder -->
+      <div id="content" style="margin-top: 30px;">
+        <div id="yield-content">
+          <div class="container">
+            <%= render 'shared/flash' %>
+            <%= yield %>
+            <%= render 'shared/footer' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlay"></div>
+    </div>
+
   </body>
+  
 </html>
