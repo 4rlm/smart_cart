@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Order Items (Cart)</h1>
+<h4>Order Items (Cart)</h4>
+<br>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Order #</th>
       <th>SKU#</th>
       <th>Product</th>
       <th>Unit Price</th>
@@ -18,11 +18,13 @@
   <tbody>
 
     <% total = 0 %>
+    <% order_num = 0 %>
 
     <% @order_items.each do |order_item| %>
-      total += order_item.subtotal
+      <% total += order_item.subtotal %>
+      <%# order_num = order_item.order.id %>
+
       <tr>
-        <td><%#= order_item.order %></td>
         <td><%= order_item.product.id %></td>
         <td><%= order_item.product.name %></td>
         <td><%= order_item.product.price %></td>
@@ -34,14 +36,32 @@
       </tr>
     <% end %>
 
-    <tr>
-      <th>Total: </th>
-    </tr>
-
-
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Order Item', new_order_item_path %>
+<table class="table">
+  <tr>
+    <tr>
+      <th>Order Total</th>
+      <th>Discount</th>
+      <th>You Pay</th>
+      <th>Order Status</th>
+      <th>Order #</th>
+    </tr>
+  </tr>
+
+  <tr>
+    <td>$<%= total %></td>
+    <td>$ 0 </td>
+    <td>$ 0 </td>
+    <td>Pending</td>
+    <td><%= order_num %></td>
+  </tr>
+
+</table>
+
+<br>
+
+<td><%#= link_to "Check Out", check_out_path(product_id: @product.id), class: "btn btn-primary" %></td>
