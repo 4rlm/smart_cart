@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :order_items
+  resources :order_items do
+    get 'add_to_cart', on: :collection
+  end
   resources :orders
   resources :users
   resources :promotions

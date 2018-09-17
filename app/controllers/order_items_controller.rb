@@ -61,6 +61,12 @@ class OrderItemsController < ApplicationController
     end
   end
 
+  def add_to_cart
+    order_item = OrderItem.find_or_create_by(product_id: product.id)
+    order_item.update(quantity: order_item.quantity += 1)
+    redirect_to product_path(product)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order_item
@@ -70,5 +76,9 @@ class OrderItemsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_item_params
       params.require(:order_item).permit(:product_id, :order_id, :quantity)
+    end
+
+    def product
+      @product ||= Product.find(params[:product_id])
     end
 end

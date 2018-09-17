@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="row form-group field">
     <%= form.label :quantity %>
-    <%= form.number_field :quantity %>
+    <%= form.number_field :quantity, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="row form-group field">
     <%= form.label :discount %>
-    <%= form.text_field :discount %>
+    <%= form.text_field :discount, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="row form-group field">
     <%= form.label :start_date %>
-    <%= form.date_select :start_date %>
+    <%= form.date_select :start_date, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="row form-group field">
     <%= form.label :end_date %>
-    <%= form.date_select :end_date %>
+    <%= form.date_select :end_date, class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-success pull-right' %>
   </div>
 <% end %>

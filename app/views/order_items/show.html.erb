@@ -1,19 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Product:</strong>
-  <%= @order_item.product %>
-</p>
+<h5>Order Item Details</h5>
 
-<p>
-  <strong>Order:</strong>
-  <%= @order_item.order %>
-</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Order #</th>
+      <th>SKU#</th>
+      <th>Product</th>
+      <th>Unit Price</th>
+      <th>Quantity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @order_item.quantity %>
-</p>
+  <tbody>
+    <tr>
+      <td><%#= order_item.order %></td>
+      <td><%= @order_item.product.id %></td>
+      <td><%= @order_item.product.name %></td>
+      <td><%= @order_item.product.price %></td>
+      <td><%= @order_item.quantity %></td>
+      <td><%= link_to 'Edit', edit_order_item_path(@order_item) %></td>
+    </tr>
+  </tbody>
+</table>
 
-<%= link_to 'Edit', edit_order_item_path(@order_item) %> |
+
 <%= link_to 'Back', order_items_path %>
