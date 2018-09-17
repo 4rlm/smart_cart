@@ -10,6 +10,7 @@
       <th>Product</th>
       <th>Unit Price</th>
       <th>Quantity</th>
+      <th>Sub-Total</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,6 +24,7 @@
         <td><%= order_item.product.name %></td>
         <td><%= order_item.product.price %></td>
         <td><%= order_item.quantity %></td>
+        <td><%= order_item.subtotal %></td>
         <td><%= link_to 'Details', order_item %></td>
         <td><%= link_to 'Edit', edit_order_item_path(order_item) %></td>
         <td><%= link_to 'Remove', order_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
