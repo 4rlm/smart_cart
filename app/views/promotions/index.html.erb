@@ -16,6 +16,7 @@
   <tbody>
     <% @promotions.each do |promotion| %>
       <tr>
+        <%# binding.pry %>
         <td><%= promotion.quantity %></td>
         <td><%= promotion.discount %></td>
         <td><%= promotion.start_date %></td>

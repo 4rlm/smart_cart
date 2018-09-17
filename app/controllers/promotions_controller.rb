@@ -25,6 +25,7 @@ class PromotionsController < ApplicationController
   # POST /promotions.json
   def create
     @promotion = Promotion.new(promotion_params)
+    binding.pry
 
     respond_to do |format|
       if @promotion.save
@@ -69,6 +70,8 @@ class PromotionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def promotion_params
-      params.require(:promotion).permit(:quantity, :discount, :start_date, :end_date)
+    binding.pry
+      # params.require(:promotion).permit(:quantity, :discount, :start_date, :end_date, :product_id, product_ids:[])
+      params.require(:promotion).permit(:quantity, :discount, :start_date, :end_date, products_attributes: [:id])
     end
 end
