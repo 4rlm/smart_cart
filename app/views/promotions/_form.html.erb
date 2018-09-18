@@ -12,14 +12,12 @@
   <% end %>
 
   <div class="row form-group field">
-    <%= form.collection_select :product_id, Product.all, :id, :name %>
+    <%= form.collection_select "product_promotions_attributes[][product_id]", Product.all, :id, :name %>
   </div>
-
 
   <%# <div class="row form-group field"> %>
     <%#= form.collection_check_boxes :product_ids, Product.all, :id, :name %>
   <%# </div> %>
-
 
   <div class="row form-group field">
     <%= form.label :quantity %>

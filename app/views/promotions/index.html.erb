@@ -5,6 +5,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>Item</th>
       <th>Quantity</th>
       <th>Discount</th>
       <th>Start date</th>
@@ -17,6 +18,7 @@
     <% @promotions.each do |promotion| %>
       <tr>
         <%# binding.pry %>
+        <td><%= promotion.products.last.name %></td>
         <td><%= promotion.quantity %></td>
         <td><%= promotion.discount %></td>
         <td><%= promotion.start_date %></td>

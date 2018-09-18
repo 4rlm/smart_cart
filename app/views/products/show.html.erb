@@ -5,19 +5,23 @@
 <table class="table">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Price</th>
+      <th>SKU#</th>
       <th>Name</th>
       <th>Description</th>
+      <th>Price</th>
+      <th>Discount</th>
+      <th>Min for Discount</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><%= @product.id %></td>
-      <td><%= @product.price %></td>
       <td><%= @product.name %></td>
       <td><%= @product.description %></td>
+      <td><%= @product.price %></td>
+      <td>$<%= @product.promotions.last.discount %></td>
+      <td><%= @product.promotions.last.quantity %></td>
       <td><%= link_to "Add to Cart", add_to_cart_order_items_path(product_id: @product.id), class: "btn btn-primary" %></td>
     </tr>
   </tbody>
